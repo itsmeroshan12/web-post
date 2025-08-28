@@ -11,7 +11,7 @@ export default function DashboardPage() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await API.get('/auth/me'); // You’ll build this route next
+        const res = await API.get('/auth/me');
         setUser(res.data.user);
       } catch (err) {
         toast.error('Session expired');
@@ -23,7 +23,7 @@ export default function DashboardPage() {
 
   const handleLogout = async () => {
     try {
-      await API.post('/auth/logout'); // You’ll build this route too
+      await API.post('/auth/logout'); 
       toast.success('Logged out');
       router.push('/login');
     } catch (err) {
